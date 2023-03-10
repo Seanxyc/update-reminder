@@ -30,6 +30,7 @@
 nbproject  
 thumbs.db  
 *.iml  
+.vscode
 
 # Folders to ignore  
 .hg  
