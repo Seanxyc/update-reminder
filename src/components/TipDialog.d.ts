@@ -1,3 +1,4 @@
+import './tip-dialog.css'
 export declare const versionTipDialog: (params: {
   title?: string | undefined;
   description?: string | undefined;
