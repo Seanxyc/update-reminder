@@ -20,5 +20,7 @@
       "experimentalObjectRestSpread": true
     }
   },
-  "rules": {} // 自定义
+  "rules": {
+    "no-empty-function": "off",
+  } // 自定义
 }
