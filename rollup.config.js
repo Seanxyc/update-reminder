@@ -1,4 +1,5 @@
 import rollupTypescript from '@rollup/plugin-typescript'
+import { eslint } from 'rollup-plugin-eslint'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import pkg from './package.json' assert {type: "json"}
@@ -25,6 +26,12 @@ export default {
     }
   ],
   plugins: [
+    eslint({
+      throwOnError: true, // lint 结果有错误将会抛出异常
+      throwOnWarning: true,
+      include: ['src/**/*.ts'],
+      exclude: ['node_modules/**', 'lib/**', '*.js'],
+    }),
     rollupTypescript()
   ]
 }
