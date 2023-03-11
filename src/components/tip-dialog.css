@@ -1,0 +1,49 @@
+body {
+  background-color: #555;
+}
+
+#update-reminder {
+  box-sizing: border-box;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 99999;
+  background-color: white;
+  border: 1px solid #ebeef5;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+}
+
+#update-reminder .version-content {
+  padding: 10px;
+}
+
+#update-reminder .version-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#update-reminder .version-subtitle {
+  font-size: 14px;
+}
+
+#update-reminder .button-container {
+  padding-top: 5px;
+  font-size: 14px;
+  display: flex;
+}
+
+#update-reminder .refresh-button {
+  border-radius: 4px;
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid;
+  margin-right: 5px;
+}
+
+#update-reminder .cancel-button {
+  border-radius: 4px;
+  padding: 5px;
+  cursor: pointer;
+  margin-left: 5px;
+}

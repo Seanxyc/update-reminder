@@ -1,9 +1,10 @@
 import { unCheckVersion } from "../index";
 import { CancelMode } from "../worker";
+import './tip-dialog.css'
 
 const defaultConfig = {
-  title: '更新',
-  description: '',
+  title: '提示',
+  description: '检测到新的版本',
   buttonText: '刷新'
 }
 
@@ -13,7 +14,6 @@ export function TipDialog(params: {
   buttonText?: string
   cancelButtonText?: string
   cancelMode?: string
-  color?: string
   buttonStyle?: string
   newVersion: string
   onRefresh?: (event: any) => void
@@ -23,6 +23,14 @@ export function TipDialog(params: {
   if (dialogElement) return
   const template = `
     <div id="update-reminder">
+      <div class="version-content">
+        <div class="version-title">${params.title || defaultConfig.title}</div>
+        <div class="version-subtitle">${params.description} || V ${params.newVersion} ${defaultConfig.description}}</div>
+        <div class="button-container">
+          <div class="refresh-button" style="${params.buttonStyle || ''}">${params.buttonText || defaultConfig.buttonText}</div>
+          ${params.cancelButtonText ? ` <div class="cancel-button">${params.cancelButtonText}</div> ` : ''}
+        </div>
+      </div>
     </div>
   `
 

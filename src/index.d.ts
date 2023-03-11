@@ -14,7 +14,6 @@ export declare const checkVersion: (config: {
   cancelButtonText?: string;
   cancelMode?: string;
   cancelUpdateAndStopWorker?: boolean;
-  color?: string;
   buttonStyle?: string;
 }) => void;
 

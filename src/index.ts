@@ -21,7 +21,6 @@ export function checkVersion(
     cancelButtonText?: string
     cancelMode?: string
     cancelUpdateAndStopWorker?: boolean
-    color?: string
     buttonStyle?: string
   }
 ) {
@@ -56,7 +55,6 @@ export function checkVersion(
         buttonText,
         cancelButtonText,
         cancelMode,
-        color,
         buttonStyle,
       } = options || {}
       const { onRefresh, onCancel } = config || {}
@@ -66,7 +64,6 @@ export function checkVersion(
         buttonText,
         cancelButtonText,
         cancelMode,
-        color,
         buttonStyle,
         newVersion: event.data.refreshPageVersion,
         onRefresh,

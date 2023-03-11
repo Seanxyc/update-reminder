@@ -4,7 +4,6 @@ export declare const versionTipDialog: (params: {
   buttonText?: string | undefined;
   cancelButtonText?: string | undefined;
   cancelMode?: string | undefined;
-  color?: string | undefined;
   buttonStyle?: string | undefined;
   newVersion: string;
   onRefresh?: ((event: any) => void) | undefined;
