@@ -9,6 +9,7 @@ specifiers:
   jsdom: ^21.1.0
   rollup: ^3.19.1
   rollup-plugin-eslint: ^7.0.0
+  rollup-plugin-import-css: ^3.2.1
   tslib: ^2.5.0
   typescript: ^4.9.5
   vitest: ^0.29.2
@@ -22,6 +23,7 @@ devDependencies:
   jsdom: 21.1.0
   rollup: 3.19.1
   rollup-plugin-eslint: 7.0.0
+  rollup-plugin-import-css: 3.2.1_rollup@3.19.1
   tslib: 2.5.0
   typescript: 4.9.5
   vitest: 0.29.2_jsdom@21.1.0
@@ -2012,6 +2014,15 @@ packages:
       rollup-pluginutils: 2.8.2
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /rollup-plugin-import-css/3.2.1_rollup@3.19.1:
+    resolution: {integrity: sha512-svr1JrBknT5ndEUM8nPaemTx/uF/5Tf4FAMQxvAYx2K9Sx7hL+JwB/rPuB1ZmUE1rjCnQHnz/fgik+noYM5+0w==}
+    peerDependencies:
+      rollup: ^2.x.x || ^3.x.x
+    dependencies:
+      '@rollup/pluginutils': 5.0.2_rollup@3.19.1
+      rollup: 3.19.1
     dev: true
 
   /rollup-pluginutils/2.8.2:

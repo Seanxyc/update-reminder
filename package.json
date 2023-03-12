@@ -1,7 +1,7 @@
 {
   "name": "update-reminder",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tools to check version updates for web application",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -20,6 +20,7 @@
     "jsdom": "^21.1.0",
     "rollup": "^3.19.1",
     "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-import-css": "^3.2.1",
     "tslib": "^2.5.0",
     "typescript": "^4.9.5",
     "vitest": "^0.29.2"

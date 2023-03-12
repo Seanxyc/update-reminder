@@ -34,7 +34,7 @@ export function TipDialog(params: {
     </div>
   `
 
-  let rootNode = document.createElement('div')
+  const rootNode = document.createElement('div')
   rootNode.innerHTML = template
   document.body.appendChild(rootNode)
 

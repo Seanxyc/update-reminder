@@ -1,4 +1,5 @@
 import rollupTypescript from '@rollup/plugin-typescript'
+import css from 'rollup-plugin-import-css'
 import { eslint } from 'rollup-plugin-eslint'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
@@ -32,6 +33,7 @@ export default {
       include: ['src/**/*.ts'],
       exclude: ['node_modules/**', 'lib/**', '*.js'],
     }),
+    css(),
     rollupTypescript()
   ]
 }

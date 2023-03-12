@@ -1,4 +1,3 @@
-
 export declare const checkVersion: (config: {
   originVersionFileUrl: string;
   localPackageVersion: string;
