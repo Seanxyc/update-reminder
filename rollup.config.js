@@ -24,7 +24,7 @@ export default {
       format: 'es',
       file: path.join(paths.output, 'index.esm.js'),
       name: pkg.name
-    }
+    },
   ],
   plugins: [
     eslint({

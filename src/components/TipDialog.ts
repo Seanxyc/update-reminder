@@ -25,7 +25,7 @@ export function TipDialog(params: {
     <div id="update-reminder">
       <div class="version-content">
         <div class="version-title">${params.title || defaultConfig.title}</div>
-        <div class="version-subtitle">${params.description} || V ${params.newVersion} ${defaultConfig.description}}</div>
+        <div class="version-subtitle">${params.description || `${defaultConfig.description} V${params.newVersion}`}</div>
         <div class="button-container">
           <div class="refresh-button" style="${params.buttonStyle || ''}">${params.buttonText || defaultConfig.buttonText}</div>
           ${params.cancelButtonText ? ` <div class="cancel-button">${params.cancelButtonText}</div> ` : ''}

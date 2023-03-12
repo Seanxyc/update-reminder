@@ -28,7 +28,7 @@ test('create worker function', () => {
       'origin-version0file-url': 'https://www.example.com'
     }
   })
-  // self.postMessage = (obj: { refreshPageVersion: string }) => {
+  // self.postMessage = (obj: { refreshPageVersion: string }) =>{ 
   //   expect(typeof obj === 'object' && obj.refreshPageVersion).toBeTruthy()
   // }
 })
