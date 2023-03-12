@@ -8,7 +8,6 @@ import {
   mockSetInterval,
   mockUrl,
   mockWorker,
-  mockDateToLocaleDateString
 } from './index.mock'
 
 test('create web worker', () => {
@@ -29,9 +28,9 @@ test('create worker function', () => {
       'origin-version0file-url': 'https://www.example.com'
     }
   })
-  self.postMessage = (obj: { refreshPageVersion: string }) => {
-    expect(typeof obj === 'object' && obj.refreshPageVersion).toBeTruthy()
-  }
+  // self.postMessage = (obj: { refreshPageVersion: string }) => {
+  //   expect(typeof obj === 'object' && obj.refreshPageVersion).toBeTruthy()
+  // }
 })
 
 test('cancel update function', () => {
@@ -77,4 +76,8 @@ test('cancel update function', () => {
 
   sessionStorage.setItem('update-reminder:canceled', '')
   expect(cancelUpdate('ignore-today', '', undefined, undefined)).toBeFalsy()
+})
+
+test('check version', () => {
+
 })

@@ -6,11 +6,15 @@
   "type": "module",
   "scripts": {
     "test": "vitest",
+    "build:types": "tsc -b ./tsconfig.types.json",
     "build": "rollup -c rollup.config.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "seanxyc",
   "license": "ISC",
+  "bin": {
+    "generate-version-file": "./src/scripts/genetareVersionFile.js"
+  },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.0.0",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
