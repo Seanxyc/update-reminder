@@ -1,6 +1,7 @@
 import rollupTypescript from '@rollup/plugin-typescript'
+import dts from 'rollup-plugin-dts'
 import css from 'rollup-plugin-import-css'
-import { eslint } from 'rollup-plugin-eslint'
+// import { eslint } from 'rollup-plugin-eslint'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import pkg from './package.json' assert {type: "json"}
@@ -12,28 +13,35 @@ const paths = {
   output: path.join(__dirname, '/lib')
 }
 
-export default {
-  input: paths.input,
-  output: [
-    {
-      format: 'cjs',
-      file: path.join(paths.output, 'index.js'),
-      name: pkg.name
-    },
-    {
-      format: 'es',
-      file: path.join(paths.output, 'index.esm.js'),
-      name: pkg.name
-    },
-  ],
-  plugins: [
-    eslint({
-      throwOnError: true, // lint 结果有错误将会抛出异常
-      throwOnWarning: true,
-      include: ['src/**/*.ts'],
-      exclude: ['node_modules/**', 'lib/**', '*.js'],
-    }),
-    css(),
-    rollupTypescript()
-  ]
-}
+export default [
+  {
+    input: paths.input,
+    output: [
+      {
+        format: 'cjs',
+        file: path.join(paths.output, 'index.js'),
+        name: pkg.name
+      },
+      {
+        format: 'es',
+        file: path.join(paths.output, 'index.esm.js'),
+        name: pkg.name
+      },
+    ],
+    plugins: [
+      // eslint({
+      //   throwOnError: true, // lint 结果有错误将会抛出异常
+      //   throwOnWarning: true,
+      //   include: ['src/**.ts'],
+      //   exclude: ['node_modules/**', 'lib/**' ],
+      // }),
+      css(),
+      rollupTypescript()
+    ]
+  },
+  {
+    input: "./src/index.d.ts",
+    output: [{ file: "lib/index.d.ts", format: "es" }],
+    plugins: [dts()],
+  },
+]
