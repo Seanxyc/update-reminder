@@ -1,6 +1,6 @@
 {
   "name": "update-reminder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tools to check version updates for web application",
   "main": "./src",
   "type": "module",
