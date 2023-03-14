@@ -20,7 +20,6 @@ outputDir.forEach((val) => {
   const packageJsonPath = path.join(process.cwd(), 'package.json');
   const packageJsonObject = JSON.parse(fs.readFileSync(packageJsonPath).toString());
 
-  console.log(outputVersionPath)
   fs.writeFile(outputVersionPath, `{ "version": "${process.env.VERSION || packageJsonObject.version}", "external": ${getExternal()} }`, () => {
     console.log(`created ${val}/version file`, process.env.VERSION || packageJsonObject.version);
   })
