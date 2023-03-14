@@ -8,13 +8,13 @@ A tool to check version updates for web application.
 
 ```bash
 // npm
-npm install @eastmoney/update-reminder
+npm install update-reminder
 
 // yarn
-yarn add @eastmoney/update-reminder
+yarn add update-reminder
 
 // pnpm
-pnpm install @eastmoney/updade-reminder
+pnpm install updade-reminder
 ```
 
 ## 快速开始

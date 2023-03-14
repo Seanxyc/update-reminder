@@ -1,5 +1,5 @@
 {
-  "name": "@eastmoney/update-reminder",
+  "name": "update-reminder",
   "version": "1.0.1",
   "description": "Tools to check version updates for web application",
   "main": "./lib",
