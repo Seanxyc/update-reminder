@@ -29,7 +29,7 @@ test('cancel update function', () => {
     vi.useFakeTimers()
   })
   afterEach(() => {
-    vi.useRealTimers
+    vi.useRealTimers()
   })
   mockWorker()
   const worker = new Worker('https://test.com')

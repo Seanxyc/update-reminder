@@ -4,7 +4,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['eslint:recommended'],
+  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
   overrides: [
     // 处理 TS 文件
     {
@@ -23,11 +23,15 @@ module.exports = {
       plugins: [
         // 使用 typescript x eslint 的插件
         '@typescript-eslint',
-        'plugin:prettier/recommended',
       ],
       rules: {
         'max-len': ['error', { code: 120 }],
-        '@typescript-eslint/no-unsafe-assignment': false,
+        '@typescript-eslint/no-unsafe-argument': 0,
+        '@typescript-eslint/no-unsafe-assignment': 0,
+        '@typescript-eslint/no-unsafe-member-access': 0,
+        '@typescript-eslint/restrict-template-expressions': 0,
+        '@typescript-eslint/no-empty-function': 0,
+        '@typescript-eslint/no-unsafe-call': 0,
       },
     },
   ],
