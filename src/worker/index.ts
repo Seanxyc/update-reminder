@@ -16,19 +16,22 @@ export function createWorkerFunc() {
     immediate = event.data['immediate']
     originFileUrl = event.data['origin-version-file-url']
 
-    // fetch version json file 
+    // fetch version json file
     const doFetch = () => {
-      fetch(`${originFileUrl}?${+new Date()}`).then(res => {
-        return res.json()
-      }).then((versionJsonFile) => {
-        if (oldVersion !== versionJsonFile.version) {
-          // remind to update
-          self.postMessage({
-            refreshPageVersion: `${versionJsonFile.version}`,
-            external: versionJsonFile.external
-          })
-        }
-      }).catch(() => { })
+      fetch(`${originFileUrl}?${+new Date()}`)
+        .then(res => {
+          return res.json()
+        })
+        .then(versionJsonFile => {
+          if (oldVersion !== versionJsonFile.version) {
+            // remind to update
+            self.postMessage({
+              refreshPageVersion: `${versionJsonFile.version}`,
+              external: versionJsonFile.external,
+            })
+          }
+        })
+        .catch(() => {})
     }
 
     if (immediate) doFetch()
@@ -40,7 +43,7 @@ export function createWorkerFunc() {
 export enum CancelMode {
   ignoreCurrentVersion = 'ignore-current-version',
   ignoreToday = 'ignore-today',
-  ignoreCurrentWindow = 'ignore-current-window'
+  ignoreCurrentWindow = 'ignore-current-window',
 }
 
 export function cancelUpdate(

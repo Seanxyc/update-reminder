@@ -32,7 +32,7 @@ export function checkVersion(
     'version-key': config.localPackageVersion,
     'polling-time': config.pollingTime || defaultPollingTime,
     immediate: config.immediate || false,
-    'origin-version-file-url': config.originVersionFileUrl
+    'origin-version-file-url': config.originVersionFileUrl,
   })
 
   worker.onmessage = (event: any) => {
@@ -49,14 +49,7 @@ export function checkVersion(
     if (typeof config.onVersionUpdate === 'function') {
       config.onVersionUpdate(event.data)
     } else {
-      const {
-        title,
-        description,
-        buttonText,
-        cancelButtonText,
-        cancelMode,
-        buttonStyle,
-      } = options || {}
+      const { title, description, buttonText, cancelButtonText, cancelMode, buttonStyle } = options || {}
       const { onRefresh, onCancel } = config || {}
       TipDialog({
         title,

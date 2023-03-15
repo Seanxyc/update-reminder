@@ -4,13 +4,13 @@ import css from 'rollup-plugin-import-css'
 // import { eslint } from 'rollup-plugin-eslint'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
-import pkg from './package.json' assert {type: "json"}
+import pkg from './package.json' assert { type: 'json' }
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 const paths = {
   input: path.join(__dirname, '/src/index.ts'),
-  output: path.join(__dirname, '/lib')
+  output: path.join(__dirname, '/lib'),
 }
 
 export default [
@@ -20,12 +20,12 @@ export default [
       {
         format: 'cjs',
         file: path.join(paths.output, 'index.js'),
-        name: pkg.name
+        name: pkg.name,
       },
       {
         format: 'es',
         file: path.join(paths.output, 'index.esm.js'),
-        name: pkg.name
+        name: pkg.name,
       },
     ],
     plugins: [
@@ -36,12 +36,12 @@ export default [
       //   exclude: ['node_modules/**', 'lib/**' ],
       // }),
       css(),
-      rollupTypescript()
-    ]
+      rollupTypescript(),
+    ],
   },
   {
-    input: "./src/index.d.ts",
-    output: [{ file: "lib/index.d.ts", format: "es" }],
+    input: './src/index.d.ts',
+    output: [{ file: 'lib/index.d.ts', format: 'es' }],
     plugins: [dts()],
   },
 ]

@@ -1,14 +1,5 @@
-import {
-  createWorker,
-  createWorkerFunc,
-  cancelUpdate
-} from '../src/worker'
-import {
-  mockFetch,
-  mockSetInterval,
-  mockUrl,
-  mockWorker,
-} from './index.mock'
+import { createWorker, createWorkerFunc, cancelUpdate } from '../src/worker'
+import { mockFetch, mockSetInterval, mockUrl, mockWorker } from './index.mock'
 
 test('create web worker', () => {
   mockUrl()
@@ -25,10 +16,10 @@ test('create worker function', () => {
       'version-key': '1.1.0',
       'polling-time': 0,
       immediate: true,
-      'origin-version0file-url': 'https://www.example.com'
-    }
+      'origin-version0file-url': 'https://www.example.com',
+    },
   })
-  // self.postMessage = (obj: { refreshPageVersion: string }) =>{ 
+  // self.postMessage = (obj: { refreshPageVersion: string }) =>{
   //   expect(typeof obj === 'object' && obj.refreshPageVersion).toBeTruthy()
   // }
 })
@@ -54,17 +45,17 @@ test('cancel update function', () => {
   vi.setSystemTime(date)
   localStorage.setItem('update-reminder:canceled', '3/10/2023')
   expect(cancelUpdate('ignore-today', '1.0.0', true, worker)).toBeTruthy()
-  expect(cancelUpdate('ignore-today', '1.0.0', true, undefined),).toBeTruthy()
+  expect(cancelUpdate('ignore-today', '1.0.0', true, undefined)).toBeTruthy()
 
   localStorage.setItem('update-reminder:canceled', '3/11/2023')
   expect(cancelUpdate('ignore-today', '1.0.0', false, worker)).toBeFalsy()
 
   sessionStorage.setItem('update-reminder:canceled', 'true')
-  expect(cancelUpdate('ignore-current-window', '1.0.0', true, worker),).toBeTruthy()
-  expect(cancelUpdate('ignore-current-window', '1.0.0', true, undefined),).toBeTruthy()
+  expect(cancelUpdate('ignore-current-window', '1.0.0', true, worker)).toBeTruthy()
+  expect(cancelUpdate('ignore-current-window', '1.0.0', true, undefined)).toBeTruthy()
 
   sessionStorage.setItem('update-reminder:canceled', '')
-  expect(cancelUpdate('ignore-current-window', '1.0.0', false, worker),).toBeFalsy()
+  expect(cancelUpdate('ignore-current-window', '1.0.0', false, worker)).toBeFalsy()
 
   expect(cancelUpdate('ignore-test', '1.0.0', false, worker)).toBeFalsy()
 
@@ -78,6 +69,4 @@ test('cancel update function', () => {
   expect(cancelUpdate('ignore-today', '', undefined, undefined)).toBeFalsy()
 })
 
-test('check version', () => {
-
-})
+test('check version', () => {})

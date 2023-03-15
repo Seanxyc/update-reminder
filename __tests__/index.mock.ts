@@ -1,8 +1,8 @@
 export function mockUrl() {
   const windowMock = {
     URL: {
-      createObjectURL: (blob: Blob) => 'fwlymyyw-htccsrgdk-rgemfpyt-cffydvvpc-ycgvno'
-    }
+      createObjectURL: (blob: Blob) => 'fwlymyyw-htccsrgdk-rgemfpyt-cffydvvpc-ycgvno',
+    },
   }
   vi.stubGlobal('window', windowMock)
 }
@@ -13,7 +13,7 @@ export function mockWorker() {
     onmessage: (msg: string) => void
     constructor(url: string) {
       this.url = url
-      this.onmessage = () => { }
+      this.onmessage = () => {}
     }
 
     postMessage(msg: string) {
@@ -31,7 +31,7 @@ export function mockSetInterval() {
   const windowMock = {
     setInterval: (cb: () => void) => {
       cb()
-    }
+    },
   }
   vi.stubGlobal('window', windowMock)
 }
@@ -43,13 +43,12 @@ export function mockFetch() {
         resolve({
           json: () => {
             return Promise.resolve({ version: '1.2.0' })
-          }
+          },
         })
       })
-    }
+    },
   }
   vi.stubGlobal('window', windowMock)
 }
 
-export function mockDateToLocaleDateString() {
-}
+export function mockDateToLocaleDateString() {}
