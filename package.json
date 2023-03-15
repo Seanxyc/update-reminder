@@ -3,7 +3,6 @@
   "version": "1.0.1",
   "description": "Tools to check version updates for web application",
   "main": "./lib",
-  "type": "module",
   "scripts": {
     "test": "vitest",
     "build": "rollup -c rollup.config.js"
@@ -12,7 +11,7 @@
   "author": "seanxyc",
   "license": "ISC",
   "bin": {
-    "generate-version-file": "scripts/generateVersionFile.cjs"
+    "generate-version-file": "scripts/generateVersionFile.js"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.0.0",
