@@ -28,7 +28,12 @@ export function checkVersion(
     worker = createWorker(createWorkerFunc)
   }
 
-  worker.postMessage({ 'version-key': config.localPackageVersion, 'polling-time': config.pollingTime || defaultPollingTime, immediate: config.immediate || false, 'origin-version-file-url': config.originVersionFileUrl, })
+  worker.postMessage({
+    'version-key': config.localPackageVersion,
+    'polling-time': config.pollingTime || defaultPollingTime,
+    immediate: config.immediate || false,
+    'origin-version-file-url': config.originVersionFileUrl,
+  })
 
   worker.onmessage = (event: any) => {
     const cancelUpdateLock = cancelUpdate(

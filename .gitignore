@@ -16,6 +16,7 @@
 *.sass-cache  
 *.tmp.html  
 *.dump  
+.eslintcache
 
 # OS or Editor folders  
 .DS_Store  
