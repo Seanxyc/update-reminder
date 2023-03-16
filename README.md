@@ -6,7 +6,7 @@ A tool to check version updates for web application.
 
 ```bash
 // npm
-npm install @eastmoney/update-reminder --registry="http://172.30.64.112:4873"
+npm install update-reminder
 ```
 
 ## 快速开始
@@ -16,7 +16,7 @@ npm install @eastmoney/update-reminder --registry="http://172.30.64.112:4873"
    ```javascript
    // 入口文件: 如 App.vue
    
-   import { checkVersion } from '@eastmoney/update-reminder'
+   import { checkVersion } from 'update-reminder'
    // 推荐使用 package.json 中的 version 字段, 也可自定义 version
    import { version } from '../package.json'
    

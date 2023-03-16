@@ -1,6 +1,6 @@
+import './tip-dialog.css'
 import { unCheckVersion } from '../index'
 import { CancelMode } from '../worker'
-import './tip-dialog.css'
 
 const defaultConfig = {
   title: '提示',
