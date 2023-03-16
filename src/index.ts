@@ -24,6 +24,13 @@ export function checkVersion(
     buttonStyle?: string
   }
 ) {
+  if (!config.originVersionFileUrl) {
+    console.error('[update-reminder] Required parameter originVersionFileUrl not found.')
+    return
+  } else if (!config.localPackageVersion) {
+    console.error('[update-reminder] Required parameter localPackageVersion not found.')
+    return
+  }
   if (!worker) {
     worker = createWorker(createWorkerFunc)
   }

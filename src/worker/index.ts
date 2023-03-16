@@ -1,3 +1,9 @@
+/**
+ * @description: 通过函数创建Worker
+ * 利用Function.prototype.toString()获取函数源代码的字符串，实现创建Worker
+ * @param {function} func
+ * @return {Worker}
+ */
 export function createWorker(func: () => void): Worker {
   const blob = new Blob(['(' + func.toString() + ')()'])
   const url = window.URL.createObjectURL(blob)
@@ -5,6 +11,9 @@ export function createWorker(func: () => void): Worker {
   return worker
 }
 
+/**
+ * @description: Worker 线程要执行的任务
+ */
 export function createWorkerFunc() {
   let oldVersion = ''
   let intervalTime = 5000
@@ -31,7 +40,9 @@ export function createWorkerFunc() {
             })
           }
         })
-        .catch(() => {})
+        .catch(err => {
+          console.error(err)
+        })
     }
 
     if (immediate) doFetch()
